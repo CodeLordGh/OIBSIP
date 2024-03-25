@@ -12,39 +12,61 @@ const numbers = [
   7, 8, 9, "x",
   4, 5, 6, "-",
   1, 2, 3, "/",
-  0, "00", "=",
+  0, ".", "=",
 ];
 
+
+function splitExpression(expression) {
+  const tokens = [];
+  let currentNumber = "";
+
+  for (let char of expression) {
+    if (/[+\-\*\%/µ]/.test(char)) { // Check if it's an operator
+      if (currentNumber.length > 0) {
+        tokens.push(currentNumber);
+        currentNumber = "";
+      }
+      tokens.push(char); // Add the operator directly
+    } else {
+      currentNumber += char; // Append digits and decimal point to current number
+    }
+  }
+
+  // Add the last number if it exists
+  if (currentNumber.length > 0) {
+    tokens.push(currentNumber);
+  }
+console.log(tokens)
+  return tokens;
+}
+
 const calculate = (result, number) => {
-  let cpyText = text.textContent;
   let operand2;
 
 
   // / Split the string into an array of numbers and operators
-  const tokens = cpyText.split(/([+-/x$%])/); // Split based on operators
+  const tokens =splitExpression(text.textContent); // Split based on operators
   // Initialize variables
   let operand1 = Number(tokens[0]); // First operand
   let operator; // Current operator
-
+  
   // Loop through each token
   for (let i = 1; i < tokens.length; i++) {
     const token = tokens[i];
 
-    if (token[i - 2] === "=");
-
+console.log(token)
     if (!isNaN(token)) {
       // If it's a number
       operand2 = Number(token);
 
       switch (operator) {
         case "+":
-          operand1 = operand1 + operand2;
+          operand1 += operand2;
           break;
         case "-":
-          operand1 = operand1 - operand2;
+          operand1 -= operand2;
           break;
         case "x":
-          //   operand1 = operand1 * operand2;
           operand1 *= operand2;
           break;
         case "/":
@@ -67,8 +89,8 @@ const calculate = (result, number) => {
           result.textContent = operand1;
           text.textContent = ''
           break;
-        case "c":
-          result.textContent = 0;
+        case "µ":
+          operand1 = 0;
           text.textContent = "";
           break;
       }
@@ -106,12 +128,11 @@ numbers.forEach((number) => {
 
   button.addEventListener("click", () => {
 
-    if (number === "c") {
-      text.textContent = "";
-      result.textContent = 0;
-    } else if (number === "+/-") {
+     if (number === "+/-") {
       util = "$";
       text.textContent += util;
+    }else if (number === "=") {
+      text.textContent = ''
     } else {
       util = number;
       text.textContent += number;
