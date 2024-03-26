@@ -1,12 +1,11 @@
 html{
     background-color: aqua;
 }
-
 body{
     background-color: #d49595;
     border: 2px solid white;
 }
 
 body div{
-    height: 7vh;
+    height: 100vh;
 }
