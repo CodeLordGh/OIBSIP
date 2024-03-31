@@ -3,11 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tribute Page</title>
+    <title>Video Background</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hello, Ghana</h1>
-    <div></div>
+    <div class="container">
+      <video autoplay loop muted id="backgroundVideo">
+        <source src="./public/video/moon.mp4" type="video/mp4" />
+      </video>
+      <div class="content">
+        <div class="top">
+          <div class="top-info">
+            <h1>Peris Muniu</h1>
+            <h2>1989 - to date</h2>
+          </div>
+          <div class="top-play_button">
+            <a href="https://www.youtube.com/watch?v=4_lu5ORIIm4">
+              <img src="./public/play.png" alt="paly_button" />
+            </a>
+          </div>
+        </div>
+        <div class="middle">
+          <img src="./public/peris.png" alt="profile_picture" />
+          <div class="middle_text">
+            Insurance Consultant & Virtual Assistant | Expert in Customer Service,
+            Relationship Management, and Tailored Solutions.
+          </div>
+        </div>
+        <div class="bottom">
+          <p class="text-overlay">
+            <span>Biography</span> <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus error
+            cupiditate ipsum sequi, architecto nam aliquid natus possimus odio
+            repellat aliquam! Odio commodi excepturi qui nulla ea dolore in
+            blanditiis.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos eligendi eveniet nulla odio veniam qui asperiores nam quos voluptates deleniti, est iusto, nesciunt repellat ab! Natus facere consequatur nemo repellat?
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
