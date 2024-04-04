@@ -3,14 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>todo app</title>
   </head>
   <body>
     <div class="container">
       <video autoplay loop muted id="backgroundVideo">
         <source src="./black_background.mp4" type="video/mp4" />
       </video>
-      <div class="content"></div>
+
+      <div class="todo">
+        <div class="todo-test_area">
+          <input class="test_area-title" type="text" placeholder="Title" />
+          <textarea
+            class="test_area-description"
+            type="text"
+            placeholder="Description"
+          ></textarea>
+          <input type="button" value="save" class="button" />
+        </div>
+        <div class="todo-list">
+          <div class="todo-list-header">
+            <div>
+              <p class="title">Title</p>
+              <p class="description">Description</p>
+            </div>
+            <p>Delete</p>
+          </div>
+          <hr style="margin-bottom: 10px; margin-top: 20px" />
+          <ul>
+            <!-- <li>
+              <div>
+                <p class="title">title</p>
+                <p class="description">description</p>
+              </div>
+
+              <button type="button">X</button>
+            </li> -->
+          </ul>
+        </div>
+      </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
