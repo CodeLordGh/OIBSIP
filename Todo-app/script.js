@@ -21,17 +21,16 @@ button.addEventListener("click", () => {
     <p class="title">${addTitle} </p>
     <p class="description">${addDescription} </p>
   </div>
-  <button type="button">X</button>`
+  <button type="button" class="deleteLi">X</button>`
 
-  console.log(li.textContent)
   ul.appendChild(li)
-  deleteBtns = document.querySelectorAll("li button")
+  deleteBtns = document.querySelectorAll(".deleteLi")
+  title.value = ""
+  description.value = ""
 })
 
-console.error(deleteBtns)
 deleteBtns.forEach(button => {
     button.addEventListener("click", () => {
         const liItem = this.parent
-        console.error(liItem)
     })
 })
